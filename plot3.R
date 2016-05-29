@@ -1,0 +1,8 @@
+#Plot 3 - Line Plot of Sub_metering_1 against Time, overlapped by lines of Sub_meter_2 and Sub_metering_3 -- saved as png  
+
+plot(Extract$Time,Extract$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
+legend("topright", col=c("black","red","blue"), c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"),lty=c(1,1), lwd=c(1,1))
+lines(Extract$Time,Extract$Sub_metering_2,col="red")
+lines(Extract$Time,Extract$Sub_metering_3,col="blue")
+dev.copy(png, file="plot3.png", width=600, height=480)
+dev.off()
